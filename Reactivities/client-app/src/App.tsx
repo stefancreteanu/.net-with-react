@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import { Header, List } from 'semantic-ui-react';
+import { Button, Header, List } from 'semantic-ui-react';
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -15,7 +15,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div> 
       <Header as='h2' icon='users' content='Reactivities' />
         <List>
           {activities.map((activity: any) => (
@@ -24,6 +24,7 @@ function App() {
             </List.Item>
           ))}
         </List>
+        <Button content='test' />
     </div>
   );
 }
