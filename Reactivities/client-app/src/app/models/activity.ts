@@ -52,7 +52,7 @@ export class ActivityFormValues {
     venue: string = '';
 
     constructor(activity?: ActivityFormValues) {
-        if(activity) {
+        if (activity) {
             this.id = activity.id;
             this.title = activity.title;
             this.category = activity.category;
@@ -63,4 +63,3 @@ export class ActivityFormValues {
         }
     }
 }
-  

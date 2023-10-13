@@ -23,6 +23,7 @@ export default class UserStore {
             router.navigate('/activities');
             store.modalStore.closeModal();
         } catch (error) {
+            console.log(error);
             throw error;
         }
     }
@@ -35,13 +36,13 @@ export default class UserStore {
             router.navigate('/activities');
             store.modalStore.closeModal();
         } catch (error) {
+            console.log(error);
             throw error;
         }
     }
 
     logout = () => {
         store.commonStore.setToken(null);
-        localStorage.removeItem('jwt');
         this.user = null;
         router.navigate('/');
     }
@@ -57,6 +58,10 @@ export default class UserStore {
 
     setImage = (image: string) => {
         if (this.user) this.user.image = image;
+    }
+
+    setUserPhoto = (url: string) => {
+        if (this.user) this.user.image = url;
     }
 
     setDisplayName = (name: string) => {

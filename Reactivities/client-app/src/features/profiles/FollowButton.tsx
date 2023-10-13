@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import { SyntheticEvent } from 'react';
 import { Profile } from '../../app/models/profile';
 import { Button, Reveal } from 'semantic-ui-react';
 import { useStore } from '../../app/stores/store';

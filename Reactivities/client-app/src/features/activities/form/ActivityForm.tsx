@@ -37,7 +37,7 @@ export default observer(function ActivityForm() {
 
     function handleFormSubmit(activity: ActivityFormValues) {
         if(!activity.id) {
-            let newActivity = {
+            const newActivity = {
                 ...activity,
                 id: uuid()
             }
@@ -61,7 +61,7 @@ export default observer(function ActivityForm() {
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                         <MyTextInput name='title' placeholder='Title' />
                         <MyTextArea rows={3} placeholder='Description' name='description' />
-                        <MySelectInput options={categoryOptions} placeholder='Category' name='category' />
+                        <MySelectInput options={categoryOptions as []} placeholder='Category' name='category' />
                         <MyDateInput
                             placeholderText='Date' 
                             name='date'

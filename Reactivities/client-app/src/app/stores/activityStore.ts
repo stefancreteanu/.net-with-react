@@ -35,7 +35,7 @@ export default class ActivityStore {
 
     setPredicate = (predicate: string, value: string | Date) => {
         const resetPredicate = () => {
-            this.predicate.forEach((value, key) => {
+            this.predicate.forEach((_value, key) => {
                 if (key !== 'startDate') this.predicate.delete(key);
             })
         }
@@ -211,7 +211,8 @@ export default class ActivityStore {
                 this.activityRegistry.set(this.selectedActivity!.id, this.selectedActivity!);
             })
         } catch (error) {
-
+            console.log(error);
+            throw(error);
         } finally {
             runInAction(() => this.loading = false);
         }
